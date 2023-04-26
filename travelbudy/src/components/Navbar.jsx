@@ -1,40 +1,48 @@
 import React from "react";
 import Links from "./Links";
-
+import { useRef } from "react";
+import "./Navbar.css";
 import { FaBars, FaTimes } from "react-icons/fa";
 
 const Navbar = () => {
+  const navRef = useRef();
+
+  const showNavbar = () => {
+    navRef.current.toggle("responsive_nav");
+  };
+
   return (
-    <div className="">
-      <h1 className="">Travel Buddy</h1>
-      <nav>
-        {/* main page is destination page */}
-        <li>
+    <div>
+      <div className="navbar">
+        <h1 className="">Travel Buddy</h1>
+        <nav>
+          <button className="nav-btn nav-close-btn" onClick={showNavbar}>
+            <FaTimes />{" "}
+          </button>
+          {/* main page is destination page */}
           <a href="/main" className="p-4">
             Destinations
           </a>
-        </li>
-        <li>
           <a href="/search" className="p-4">
             Travel Styles
           </a>
-        </li>
-        <li>
+
           <a href="/about" className="p-4">
             About
           </a>
-        </li>
-        <li>
+
           <a href="/contactUs" className="p-4">
             Get Inspired
           </a>
-        </li>
-        <li>
+
           <a href="/trip" className="p-4">
             Trip page
           </a>
-        </li>
-      </nav>
+        </nav>
+        <button className="nav-btn" onClick={showNavbar}>
+          <FaBars />{" "}
+        </button>
+      </div>
       <Links />
     </div>
   );
