@@ -1,12 +1,11 @@
-import React, { useState } from "react";
-import { Router } from "react-router-dom";
+import React from "react";
 import Links from "./Links";
 
 const Navbar = () => {
   return (
     <div className="">
       <h1 className="">Travel Buddy</h1>
-      <ul className="  ">
+      <ul>
         {/* main page is destination page */}
         <li>
           <a href="/main" className="p-4">
@@ -24,7 +23,7 @@ const Navbar = () => {
           </a>
         </li>
         <li>
-          <a href="/contactus" className="p-4">
+          <a href="/contactUs" className="p-4">
             Get Inspired
           </a>
         </li>
