@@ -1,22 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import Links from "./Links";
 import { useRef } from "react";
 import "./Navbar.css";
 import { FaBars, FaTimes } from "react-icons/fa";
 
 const Navbar = () => {
-  const navRef = useRef();
-
-  const showNavbar = () => {
-    navRef.current.toggle("responsive_nav");
-  };
+  const [isNavExpanded, setIsNavExpanded] = useState(false);
 
   return (
     <div>
       <div className="navbar">
         <h1 className="">Travel Buddy</h1>
-        <nav>
-          <button className="nav-btn nav-close-btn" onClick={showNavbar}>
+        <nav className={isNavExpanded ? "expanded" : "close"}>
+          <button
+            onClick={() => {
+              setIsNavExpanded(!isNavExpanded);
+            }}
+            className="nav-btn nav-close-btn"
+          >
             <FaTimes />{" "}
           </button>
           {/* main page is destination page */}
@@ -39,7 +40,12 @@ const Navbar = () => {
             Trip page
           </a>
         </nav>
-        <button className="nav-btn" onClick={showNavbar}>
+        <button
+          onClick={() => {
+            setIsNavExpanded(!isNavExpanded);
+          }}
+          className="nav-btn"
+        >
           <FaBars />{" "}
         </button>
       </div>
