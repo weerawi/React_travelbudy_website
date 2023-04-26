@@ -1,11 +1,13 @@
 import React from "react";
 import Links from "./Links";
 
+import { FaBars, FaTimes } from "react-icons/fa";
+
 const Navbar = () => {
   return (
     <div className="">
       <h1 className="">Travel Buddy</h1>
-      <ul>
+      <nav>
         {/* main page is destination page */}
         <li>
           <a href="/main" className="p-4">
@@ -32,7 +34,7 @@ const Navbar = () => {
             Trip page
           </a>
         </li>
-      </ul>
+      </nav>
       <Links />
     </div>
   );
