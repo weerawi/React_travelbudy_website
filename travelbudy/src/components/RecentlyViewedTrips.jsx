@@ -5,11 +5,26 @@ import "./RecentlyViewedTrips.css";
 
 const RecentlyViewedTrips = () => {
   return (
-    <div className="grid RecentlyViewedTrips">
-      <Card image={images.Mountant} title="Recently Viewed Trips" price="100" />
-      <Card image={images.MainBg} title=" Trips" price="2000" />
-      <Card image={images.Mountant} title="Recently Viewed Trips" price="100" />
-      <Card image={images.MainBg} title=" Trips" price="2000" />
+    <div className="bg-rvtrips">
+      <div className="recenttrip-title">Recently Viewed Trips</div>
+      <div className="grid RecentlyViewedTrips">
+        <Card
+          image={images.Mountant}
+          title="Recently Viewed Trips"
+          price="100"
+        />
+        <Card
+          image={images.MainBg}
+          title=" Trips"
+          price="2000"
+          txt="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate
+          porro cum illum voluptates aspernatur hic sed, ut deserunt esse.
+          Ratione eligendi illum dignissimos enim quod beatae corrupti esse
+          exercitationem aspernatur! "
+        />
+        <Card image={images.Boat} title="Recently Viewed Trips" price="100" />
+        <Card image={images.TravelGirl} title=" Trips" price="2000" />
+      </div>
     </div>
   );
 };

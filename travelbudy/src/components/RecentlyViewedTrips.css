@@ -2,6 +2,13 @@
   overflow-x: hidden;
 }
 
+:root {
+  --bgColor: rgb(14, 174, 214);
+  --searchIconColor: rgb(179, 255, 15);
+  --txtColor: rgb(211, 211, 211);
+  --textColor: rgb(50, 50, 50);
+}
+
 .RecentlyViewedTrips {
   display: flex;
   flex-direction: row;
@@ -13,4 +20,23 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-gap: 3rem;
+}
+
+.recenttrip-title {
+  text-transform: capitalize;
+  font-size: 2rem;
+  color: black;
+  justify-content: center;
+  align-items: center;
+  padding-top: 3rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.bg-rvtrips {
+  background: linear-gradient(
+    180deg,
+    rgb(109, 169, 228) 35%,
+    rgb(147, 132, 209) 100%
+  );
 }

@@ -30,6 +30,7 @@
   cursor: pointer;
   border: 2px solid black;
   border-radius: 50%;
+  transition: 0.2s;
 }
 
 .leftArrow {
@@ -72,7 +73,9 @@
 div .title {
   text-transform: uppercase;
   font-size: 2rem;
-  color: white;
+  background: -webkit-linear-gradient(#eee, #333, black);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   justify-content: center;
   align-items: center;
   width: 75vw;

@@ -1,27 +1,28 @@
-import React from "react";
-import { images } from "../constants";
+import React, { useState } from "react";
 import "./Card.css";
 
 const Card = (props) => {
-  // const viewDetails = (() = {
-  //   rawcontent().slice(0,10);
-  // })
+  let text =
+    "Lorem ipsum, dolor sit amet consectetur adipisicingry erty eryertye erter teyer er ertert et erterter ertet etet etre  terte tret ert eerte esdfs sdfs sdfsd dsfsd sdddddddd sddddddd sdger jyjt tyj el ";
+  const [isReadMore, setIsReadMore] = useState(true);
+  const toggleReadMore = () => {
+    setIsReadMore(!isReadMore);
+  };
 
   return (
     <div className="card-container">
       <div className="img-container">
-        <img className="card-img" src={props.image} alt="ref"></img>
+        <img className="card-img" src={props.image} alt="card-image"></img>
         <span className="card-price">From {props.price}$</span>
       </div>
 
       <div className="card-info-container">
         <div className="card-title">{props.title}</div>
         <div className="card-info">
-          {" "}
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate
-          porro cum illum voluptates aspernatur hic sed, ut deserunt esse.
-          Ratione eligendi illum dignissimos enim quod beatae corrupti esse
-          exercitationem aspernatur!
+          {isReadMore ? text.slice(0, 100) : text}
+          <span onClick={toggleReadMore} className="read-or-hide">
+            {isReadMore ? "...read more" : " show less"}
+          </span>
         </div>
       </div>
 
