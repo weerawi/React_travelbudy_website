@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Carme&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Carme";
+}
+
+:root {
+  --bgColor: rgb(14, 174, 214);
+  --searchIconColor: rgb(179, 255, 15);
+  --txtColor: rgb(211, 211, 211);
+  --textColor: rgb(50, 50, 50);
+}
+
+.sliderStyles {
+  height: 100%;
+  position: relative;
+  margin: 0;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  width: 45px;
+  height: 45px;
+  z-index: 1;
+  cursor: pointer;
+  border: 2px solid black;
+  border-radius: 50%;
+}
+
+.leftArrow {
+  left: 32px;
+}
+
+.rightArrow {
+  right: 32px;
+}
+.arrow:hover {
+  border: 3px solid rgb(211, 211, 211);
+}
+
+.dot {
+  margin: 0 3px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.dotsContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1rem;
+  padding-top: 1rem;
+}
+
+/* /////   slider on details styles //// */
+
+div .title {
+  text-transform: uppercase;
+  font-size: 2rem;
+  color: white;
+  backdrop-filter: blur(5px);
+  padding: 2rem;
+  margin: auto auto;
+  width: auto;
+  font-weight: 600;
+  text-align: center;
+}
+
+.searchTips {
+  text-transform: uppercase;
+  font-size: 1rem;
+  color: white;
+  cursor: pointer;
+  margin: 10rem auto;
+  width: 200px;
+  padding: 1rem 2rem;
+  font-weight: 600;
+  text-align: center;
+  background-color: var(--searchIconColor);
+  color: var(--textColor);
+  border-radius: 20px;
+}
+
+.searchTips:hover {
+  color: black;
+  font-weight: 800;
+}
