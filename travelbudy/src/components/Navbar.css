@@ -67,9 +67,15 @@ nav a:hover {
     justify-content: center;
     gap: 2rem;
     transition: 1s;
+    backdrop-filter: blur(15px);
     transform: translateX(70px);
-    background-color: aquamarine;
+    background: linear-gradient(
+      180deg,
+      rgb(5, 191, 219) 35%,
+      rgb(147, 132, 209) 100%
+    );
     z-index: 100;
+    font-weight: 600;
   }
 
   .close {

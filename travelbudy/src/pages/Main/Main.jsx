@@ -14,7 +14,7 @@ const Main = () => {
 
   return (
     <div className="main-img-bg">
-      <ImageSlider slides={slides} />
+      <ImageSlider slides={slides} autoPlay={3} />
       <RecentlyViewedTrips />
     </div>
   );

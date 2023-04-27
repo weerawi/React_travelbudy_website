@@ -52,6 +52,10 @@
   color: var(--searchIconColor);
 }
 
+.current-dot {
+  color: var(--txtColor);
+}
+
 .dot:hover {
   color: var(--txtColor);
 }

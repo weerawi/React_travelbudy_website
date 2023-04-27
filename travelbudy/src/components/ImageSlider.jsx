@@ -1,9 +1,23 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { icons } from "../constants";
 import "./ImageSliderStyle.css";
 
-const ImageSlider = ({ slides }) => {
+const ImageSlider = ({ slides, autoPlay }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const autoPlayRef = useRef();
+
+  useEffect(() => {
+    autoPlayRef.current = goNext;
+  });
+
+  useEffect(() => {
+    const play = () => {
+      autoPlayRef.current();
+    };
+
+    const interval = setInterval(play, autoPlay * 1000);
+    return () => clearInterval(interval);
+  }, []);
 
   const slideStyles = {
     backgroundImage: `url(${slides[currentIndex].url})`,
@@ -59,7 +73,9 @@ const ImageSlider = ({ slides }) => {
         <div className="dotsContainer">
           {slides.map((slide, slideIndex) => (
             <div
-              className="dot"
+              className={`dot  ${
+                currentIndex == slideIndex ? "current-dot" : ""
+              }`}
               key={slideIndex}
               onClick={() => goToSlide(slideIndex)}
             >
