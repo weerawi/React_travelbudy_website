@@ -1,0 +1,16 @@
+* {
+  overflow-x: hidden;
+}
+
+.RecentlyViewedTrips {
+  display: flex;
+  flex-direction: row;
+  overflowx: hidden;
+  padding: 2rem 2rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 3rem;
+}

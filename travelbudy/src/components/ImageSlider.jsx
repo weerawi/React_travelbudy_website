@@ -11,7 +11,7 @@ const ImageSlider = ({ slides }) => {
     backgroundSize: "cover",
     backgroundAttachment: "fixed",
     backgroundPosition: "center ",
-    height: "80vh",
+    height: "90vh",
   };
 
   const goPrevious = () => {
@@ -55,18 +55,18 @@ const ImageSlider = ({ slides }) => {
         <div className="searchTips">search tips</div>
 
         <div className="sliderSearchBar">search bars </div>
-      </div>
 
-      <div className="dotsContainer">
-        {slides.map((slide, slideIndex) => (
-          <div
-            className="dot"
-            key={slideIndex}
-            onClick={() => goToSlide(slideIndex)}
-          >
-            ◉{" "}
-          </div>
-        ))}
+        <div className="dotsContainer">
+          {slides.map((slide, slideIndex) => (
+            <div
+              className="dot"
+              key={slideIndex}
+              onClick={() => goToSlide(slideIndex)}
+            >
+              ◉{" "}
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

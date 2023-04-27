@@ -2,6 +2,7 @@ import React from "react";
 import "./Main.css";
 import ImageSlider from "../../components/ImageSlider";
 import { images } from "../../constants";
+import RecentlyViewedTrips from "../../components/RecentlyViewedTrips";
 
 const Main = () => {
   const slides = [
@@ -14,6 +15,7 @@ const Main = () => {
   return (
     <div className="main-img-bg">
       <ImageSlider slides={slides} />
+      <RecentlyViewedTrips />
     </div>
   );
 };

@@ -44,9 +44,11 @@
 }
 
 .dot {
-  margin: 0 3px;
+  margin-right: 1rem;
+  margin-left: 1rem;
   cursor: pointer;
   font-size: 1.5rem;
+  color: var(--searchIconColor);
 }
 
 .dot:hover {
@@ -71,10 +73,15 @@ div .title {
   text-transform: uppercase;
   font-size: 2rem;
   color: white;
+  justify-content: center;
+  align-items: center;
+  width: 75vw;
+  box-shadow: 0 0.3px 0.7px rgba(0, 0, 0, 0.126),
+    0 0.9px 1.7px rgba(0, 0, 0, 0.179), 0 1.8px 3.5px rgba(0, 0, 0, 0.224),
+    0 3.7px 7.3px rgba(0, 0, 0, 0.277), 0 10px 20px rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(5px);
   padding: 2rem;
   margin: auto auto;
-  width: auto;
   font-weight: 600;
   text-align: center;
 }
