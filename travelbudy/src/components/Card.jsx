@@ -4,7 +4,7 @@ import { icons } from "../constants";
 
 const Card = (props) => {
   let text =
-    "Lorem ipsum, dolor sit amet consectetur adipisicingry erty eryertye erter teyer er ertert et erterter ertet etet etre  terte tret ert eerte esdfs sdfs sdfsd dsfsd sdddddddd sddddddd sdger jyjt tyj el ";
+    "Trip.com is a rapidly-growing global online travel agency. Trip.com is here to help you plan the perfect trip. Whether you're going on holiday, taking a business trip, or looking to set up a corporate travel account, Trip.com is here to help you travel the world with cheap flights, discount hotels, and train tickets.  ";
   const [isReadMore, setIsReadMore] = useState(true);
   const toggleReadMore = () => {
     setIsReadMore(!isReadMore);
