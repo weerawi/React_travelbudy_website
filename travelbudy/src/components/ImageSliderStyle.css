@@ -10,7 +10,7 @@
 :root {
   --bgColor: rgb(14, 174, 214);
   --searchIconColor: rgb(179, 255, 15);
-  --txtColor: rgb(211, 211, 211);
+  --dotColor: rgb(230, 230, 230);
   --textColor: rgb(50, 50, 50);
 }
 
@@ -53,7 +53,7 @@
 }
 
 .current-dot {
-  color: var(--txtColor);
+  color: var(--dotColor);
 }
 
 .dot:hover {

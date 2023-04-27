@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Card.css";
+import { icons } from "../constants";
 
 const Card = (props) => {
   let text =
@@ -18,10 +19,25 @@ const Card = (props) => {
 
       <div className="card-info-container">
         <div className="card-title">{props.title}</div>
+        <div className="card-publish-details">
+          <div className="card-publish-icon">
+            <img src={icons.location} alt="date" />
+            {props.date}
+          </div>
+          <div className="card-publish-icon">
+            <img src={icons.location} alt="places" />
+            {props.places} Places
+          </div>
+          <div className="card-publish-icon">
+            <img src={icons.location} alt="countries" />
+            {props.countries} Countries
+          </div>
+        </div>
+
         <div className="card-info">
           {isReadMore ? text.slice(0, 100) : text}
           <span onClick={toggleReadMore} className="read-or-hide">
-            {isReadMore ? "...read more" : " show less"}
+            {isReadMore ? "...    read more" : " show less"}
           </span>
         </div>
       </div>
