@@ -11,7 +11,7 @@ const Navbar = () => {
     <div>
       <div className="navbar">
         <h1 className="">Travel Buddy</h1>
-        <nav className={isNavExpanded ? "expanded" : "close"}>
+        <nav className={isNavExpanded ? "expanded " : "close "}>
           <button
             onClick={() => {
               setIsNavExpanded(!isNavExpanded);
