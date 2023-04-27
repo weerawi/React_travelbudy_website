@@ -46,7 +46,11 @@
 .dot {
   margin: 0 3px;
   cursor: pointer;
-  font-size: 20px;
+  font-size: 1.5rem;
+}
+
+.dot:hover {
+  color: var(--txtColor);
 }
 
 .dotsContainer {
@@ -58,6 +62,10 @@
 }
 
 /* /////   slider on details styles //// */
+
+.space {
+  padding-top: 4rem;
+}
 
 div .title {
   text-transform: uppercase;
@@ -76,7 +84,7 @@ div .title {
   font-size: 1rem;
   color: white;
   cursor: pointer;
-  margin: 10rem auto;
+  margin: 6rem auto;
   width: 200px;
   padding: 1rem 2rem;
   font-weight: 600;
@@ -89,4 +97,18 @@ div .title {
 .searchTips:hover {
   color: black;
   font-weight: 800;
+}
+
+.sliderSearchBar {
+  font-size: 1rem;
+  color: white;
+  cursor: pointer;
+  margin: 8rem auto;
+  width: 200px;
+  padding: 1rem 2rem;
+  font-weight: 600;
+  text-align: center;
+  background-color: var(--searchIconColor);
+  color: var(--textColor);
+  border-radius: 20px;
 }

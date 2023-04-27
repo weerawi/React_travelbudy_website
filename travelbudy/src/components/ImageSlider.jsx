@@ -49,6 +49,7 @@ const ImageSlider = ({ slides }) => {
       {/* 
       /////////////// slider text and others type on this div /////////////  */}
       <div style={slideStyles}>
+        <div className="space"></div>
         <div className="title">Dreamy summer holidays </div>
 
         <div className="searchTips">search tips</div>
@@ -63,7 +64,7 @@ const ImageSlider = ({ slides }) => {
             key={slideIndex}
             onClick={() => goToSlide(slideIndex)}
           >
-            ⊙{" "}
+            ◉{" "}
           </div>
         ))}
       </div>
