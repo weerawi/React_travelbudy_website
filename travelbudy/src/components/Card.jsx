@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Card.css";
 import { icons } from "../constants";
+import Stars from "./Stars";
 
 const Card = (props) => {
   let text =
@@ -9,6 +10,7 @@ const Card = (props) => {
   const toggleReadMore = () => {
     setIsReadMore(!isReadMore);
   };
+  // const { stars, reviews } = StarRate;
 
   return (
     <div className="card-container">
@@ -19,6 +21,7 @@ const Card = (props) => {
 
       <div className="card-info-container">
         <div className="card-title">{props.title}</div>
+        {/* <Stars stars={stars} reviews={reviews} /> */}
         <div className="card-publish-details">
           <div className="card-publish-icon">
             <img src={icons.calender} alt="date" />

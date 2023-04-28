@@ -3,6 +3,7 @@ import "./Main.css";
 import ImageSlider from "../../components/ImageSlider";
 import { images } from "../../constants";
 import RecentlyViewedTrips from "../../components/RecentlyViewedTrips";
+import MostPopularTrips from "../../components/MostPopularTrips";
 
 const Main = () => {
   const slides = [
@@ -16,6 +17,7 @@ const Main = () => {
     <div className="main-img-bg">
       <ImageSlider slides={slides} autoPlay={3} />
       <RecentlyViewedTrips />
+      <MostPopularTrips />
     </div>
   );
 };
