@@ -21,7 +21,7 @@ const Card = (props) => {
         <div className="card-title">{props.title}</div>
         <div className="card-publish-details">
           <div className="card-publish-icon">
-            <img src={icons.location} alt="date" />
+            <img src={icons.calender} alt="date" />
             {props.date}
           </div>
           <div className="card-publish-icon">
@@ -29,7 +29,7 @@ const Card = (props) => {
             {props.places} Places
           </div>
           <div className="card-publish-icon">
-            <img src={icons.location} alt="countries" />
+            <img src={icons.world} alt="countries" />
             {props.countries} Countries
           </div>
         </div>
