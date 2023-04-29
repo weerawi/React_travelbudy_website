@@ -10,6 +10,7 @@ import asia from "../assets/images/asia.jpg";
 import australia from "../assets/images/australia.jpg";
 import africa from "../assets/images/africa.jpg";
 import latinamerica from "../assets/images/Lamerica.jpg";
+import mirage from "../assets/images/mirage.jpg";
 
 export default {
   profile,
@@ -24,4 +25,5 @@ export default {
   australia,
   africa,
   latinamerica,
+  mirage,
 };
