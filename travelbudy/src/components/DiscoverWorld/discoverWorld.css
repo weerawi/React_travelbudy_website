@@ -47,7 +47,7 @@
   height: 170px;
   border-radius: 20px;
   padding: 1rem;
-  margin: 20px 0;
+  margin: 20px auto;
 }
 
 .feature-box-icons {
@@ -96,7 +96,7 @@
   height: 200px;
   border-radius: 20px;
   padding: 20px;
-  margin: 20px 0;
+  margin: 20px auto;
   background-color: white;
   color: var(--textColor);
 }
@@ -122,7 +122,7 @@
 .location-card-container {
   padding: 2rem;
   display: grid;
-
+  margin: 10px auto;
   grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
 }
 
@@ -138,7 +138,7 @@
   height: 200px;
   border-radius: 20px;
   padding: 20px;
-  margin: 20px 0;
+  margin: 20px auto;
   color: var(--textColor);
   text-decoration: none;
   cursor: pointer;
