@@ -11,6 +11,9 @@ import calender from "../assets/icons/calendar.png";
 import world from "../assets/icons/world.png";
 import chevronLeft from "../assets/icons/chevron-left.png";
 import chevronRight from "../assets/icons/chevron-right.png";
+import dollar from "../assets/icons/dollar.png";
+import travel from "../assets/icons/travel.png";
+import team from "../assets/icons/teamwork.png";
 
 export default {
   heart,
@@ -26,4 +29,7 @@ export default {
   world,
   chevronLeft,
   chevronRight,
+  dollar,
+  travel,
+  team,
 };

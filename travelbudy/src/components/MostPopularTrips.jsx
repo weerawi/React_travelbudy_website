@@ -1,13 +1,13 @@
 import React from "react";
 import Card from "./Card";
 import { images } from "../constants";
-import "./RecentlyViewedTrips.css";
+import "./MostPopularTrips.css";
 
 const MostPopularTrips = () => {
   return (
-    <div className="bg-rvtrips">
+    <div className="bg-mptrips">
       <div className="recenttrip-title">Most Popular Trips</div>
-      <div className="grid RecentlyViewedTrips">
+      <div className="grid MostPopularTrips">
         <Card
           image={images.Mountant}
           title="Recently Viewed Trips"

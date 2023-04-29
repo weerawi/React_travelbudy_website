@@ -4,6 +4,7 @@ import ImageSlider from "../../components/ImageSlider";
 import { images } from "../../constants";
 import RecentlyViewedTrips from "../../components/RecentlyViewedTrips";
 import MostPopularTrips from "../../components/MostPopularTrips";
+import DiscoverWorld from "../../components/DiscoverWorld/DiscoverWorld";
 
 const Main = () => {
   const slides = [
@@ -18,6 +19,7 @@ const Main = () => {
       <ImageSlider slides={slides} autoPlay={3} />
       <RecentlyViewedTrips />
       <MostPopularTrips />
+      <DiscoverWorld />
     </div>
   );
 };

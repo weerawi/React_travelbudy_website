@@ -21,7 +21,7 @@ const Card = (props) => {
 
       <div className="card-info-container">
         <div className="card-title">{props.title}</div>
-        {/* <Stars stars={stars} reviews={reviews} /> */}
+        <Stars />
         <div className="card-publish-details">
           <div className="card-publish-icon">
             <img src={icons.calender} alt="date" />
