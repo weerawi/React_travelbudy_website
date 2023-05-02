@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { images } from "../../constants";
 import FeedbackCard from "./FeedbackCard";
 import { icons } from "../../constants";
 
@@ -41,13 +40,14 @@ const Feedback = ({ feedbacks }) => {
       ></img>
 
       <div className="feedback-card-container">
-        {feedbacks.map((slide, slideIndex) => (
+        {feedbacks.slice(0, 2).map((slide, slideIndex) => (
           <div
             className=""
             key={slideIndex}
             onClick={() => goToSlide(slideIndex)}
           >
             <FeedbackCard
+              key={slideIndex}
               image={slide.image}
               feedback={slide.feedback}
               name={slide.name}

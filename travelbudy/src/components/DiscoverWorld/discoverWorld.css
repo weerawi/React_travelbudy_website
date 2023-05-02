@@ -83,7 +83,6 @@
 .feedback-card-container {
   padding: 2rem;
   justify-content: center;
-  white-space: nowrap;
   overflow-x: scroll;
   transition: 0.2s;
   background-color: black;
@@ -91,6 +90,7 @@
   height: 350px;
   padding: 3rem;
   display: inline-block;
+  display: flex;
   margin: 1rem auto;
 }
 
@@ -116,12 +116,12 @@
 
 .fleftArrow {
   position: absolute;
-  left: 40%;
+  left: 5rem;
 }
 
 .frightArrow {
   position: absolute;
-  right: 40%;
+  right: 6rem;
 }
 .feedbackarrow:hover {
   border: 3px solid rgb(14, 174, 214);
@@ -141,10 +141,9 @@
   height: 200px;
   border-radius: 20px;
   padding: 20px;
-  margin: 20px 1.5rem;
+  margin: 10px 1.5rem;
   background-color: white;
   color: var(--textColor);
-  display: inline-block;
 }
 
 .feedback-img {
