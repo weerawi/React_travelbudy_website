@@ -1,15 +1,31 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Links from "./Links";
-import { useRef } from "react";
 import "./Navbar.css";
 import { FaBars, FaTimes } from "react-icons/fa";
 
 const Navbar = () => {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
 
+  const [stickyClass, setStickyClass] = useState("relative");
+
+  useEffect(() => {
+    window.addEventListener("scroll", stickNavbar);
+
+    return () => {
+      window.removeEventListener("scroll", stickNavbar);
+    };
+  }, []);
+
+  const stickNavbar = () => {
+    if (window !== undefined) {
+      let windowHeight = window.scrollY;
+      windowHeight > 1 ? setStickyClass("navbar-sticky") : setStickyClass(" ");
+    }
+  };
+
   return (
     <div>
-      <div className="navbar">
+      <div className={`navbar ${stickyClass}`}>
         <h1 className="">Travel Buddy</h1>
         <nav className={isNavExpanded ? "expanded " : "close "}>
           <button
