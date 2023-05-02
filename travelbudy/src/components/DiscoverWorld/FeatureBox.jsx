@@ -4,6 +4,7 @@ const FeatureBox = (props) => {
   const bgcolorstyle = {
     backgroundColor: `${props.bgcolor}`,
   };
+
   return (
     <>
       <a style={bgcolorstyle} className="feature-box feature-box-link">

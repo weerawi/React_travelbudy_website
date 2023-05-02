@@ -25,7 +25,9 @@ const ImageSlider = ({ slides, autoPlay }) => {
     backgroundSize: "cover",
     backgroundAttachment: "fixed",
     backgroundPosition: "center ",
-    height: "90vh",
+    height: "100%",
+    overflow: "hidden",
+    padding: "20px 0",
   };
 
   const goPrevious = () => {
