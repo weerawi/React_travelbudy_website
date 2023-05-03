@@ -1,7 +1,8 @@
 import React from "react";
+import TravelStyle from "../../components/TravelStyle";
 
 const Search = () => {
-  return <div>Search</div>;
+  return <TravelStyle />;
 };
 
 export default Search;
