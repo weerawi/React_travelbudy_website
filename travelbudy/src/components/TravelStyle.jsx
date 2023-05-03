@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Card from "../components/Card";
 import { images } from "../constants";
 import Trips from "../data/trips.json";
+import { useMediaQuery } from "../hook/mediaquery";
 
 const TravelStyle = () => {
   const card = {
@@ -43,13 +44,15 @@ const TravelStyle = () => {
     list: Trips,
   });
 
+  const isRowBased = useMediaQuery("(min-width: 1500px)");
+
   const media = {
-    // Adding media query..
-    "@media only screen and (max-width: 600px)": {
+    container: (isRowBased) => ({
       display: "flex",
-      flexDirection: "column",
+      flexDirection: isRowBased ? "row" : "column",
+      justifyContent: "space-around",
       background: "red",
-    },
+    }),
   };
 
   // Filter posts on typing in search input
@@ -137,7 +140,7 @@ const TravelStyle = () => {
           </select>
         </div>
       </form>
-      <ul>
+      <div style={media.container(isRowBased)}>
         {Trips.map((trip) => {
           return (
             <div key={trip.id}>
@@ -154,7 +157,7 @@ const TravelStyle = () => {
         })}
 
         {state.list.length === 0 && <h2>Empty List !!!</h2>}
-      </ul>
+      </div>
     </div>
   );
 };
