@@ -5,30 +5,37 @@ import Trips from "../data/trips.json";
 import { useMediaQuery } from "../hook/mediaquery";
 
 const TravelStyle = () => {
-  const card = {
-    background: "aliceblue",
-    border: "2px solid aqua",
-    borderRadius: "25px",
-    paddingLeft: "60px",
-    marginBottom: "25px",
+  const searchBg = {
+    container: (isRowBased) => ({
+      margin: "1rem 3rem",
+      background: "black",
+      borderRadius: "25px",
+      display: "flex",
+      flexDirection: isRowBased ? "row" : "column",
+      alignItems: "flex-start",
+      padding: "64px",
+      gap: "8px",
+      position: " relative",
+      justifyContent: "center",
+      background:
+        "linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), #101010",
+      borderRadius: "64px",
+    }),
   };
 
   const margin = {
-    marginLeft: "200px",
+    container: (isRowBased) => ({
+      marginLeft: isRowBased ? "200px" : "0",
+      color: "lightgrey",
+      marginRight: "1rem",
+    }),
   };
 
-  const form = {
-    display: "flex",
-    flexDirection: "row",
-    width: "auto",
+  const input = {
+    width: "200px",
+    height: "2rem",
+    margin: "10px 0",
   };
-
-  // const posts = [
-  //   { url: `${images.MainBg}`, title: "Main-bg" },
-  //   { url: `${images.Boat}`, title: "Boat" },
-  //   { url: `${images.Mountant}`, title: "Mountant" },
-  //   { url: `${images.TravelGirl}`, title: "TravelGirl" },
-  // ];
 
   // Store sortby order i.e. ascending or descending
   const [sortType, setSortType] = useState("ascending");
@@ -46,12 +53,16 @@ const TravelStyle = () => {
 
   const isRowBased = useMediaQuery("(min-width: 1500px)");
 
+  const searchBar = {
+    justifyContent: "space-around",
+  };
+
   const media = {
     container: (isRowBased) => ({
       display: "flex",
+
       flexDirection: isRowBased ? "row" : "column",
       justifyContent: "space-around",
-      background: "red",
     }),
   };
 
@@ -106,15 +117,21 @@ const TravelStyle = () => {
 
   return (
     <div>
-      <form style={form}>
-        <div style={media}>
-          <span style={margin}>Search</span>
-          <input onChange={handleChange} value={state.query} type="search" />
+      <form style={searchBg.container(isRowBased)}>
+        <div style={searchBar}>
+          <span style={margin.container(isRowBased)}> Search </span>
+          <input
+            style={input}
+            onChange={handleChange}
+            value={state.query}
+            type="search"
+          />
         </div>
 
-        <div style={media}>
-          <span style={margin}>Sort By</span>
+        <div style={searchBar}>
+          <span style={margin.container(isRowBased)}>Sort By</span>
           <select
+            style={input}
             defaultValue={"title"}
             onChange={(e) => sortBy(e.target.value)}
           >
@@ -126,9 +143,10 @@ const TravelStyle = () => {
           </select>
         </div>
 
-        <div style={media}>
-          <span style={margin}>Sort By</span>
+        <div style={searchBar}>
+          <span style={margin.container(isRowBased)}>Sort By</span>
           <select
+            style={input}
             defaultValue={"DEFAULT"}
             onChange={(e) => updatePosts(e.target.value)}
           >
@@ -143,16 +161,14 @@ const TravelStyle = () => {
       <div style={media.container(isRowBased)}>
         {Trips.map((trip) => {
           return (
-            <div key={trip.id}>
-              <Card
-                image={trip.image}
-                title={trip.title}
-                date={trip.date}
-                price={trip.price}
-                places={trip.places}
-                countries={trip.countries}
-              />
-            </div>
+            <Card
+              image={images.Boat}
+              title={trip.title}
+              date={trip.date}
+              price={trip.price}
+              places={trip.places}
+              countries={trip.countries}
+            />
           );
         })}
 
