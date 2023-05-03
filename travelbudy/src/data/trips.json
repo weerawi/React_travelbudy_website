@@ -1,0 +1,34 @@
+
+
+export const trips=[{
+    "image":{images.Mountant},
+    "title":"Recently Viewed Trips",
+    "date":"October 28, 2022",
+    "price":"100",
+    "places":"32",
+    "countries":"10"
+  },
+  {
+    "image":{images.Mountant},
+    "title":"Recently Viewed Trips",
+    "date":"October 28, 2022",
+    "price":"100",
+    "places":"32",
+    "countries":"10"
+  },
+  {
+    "image":{images.Mountant},
+    "title":"Recently Viewed Trips",
+    "date":"October 28, 2022",
+    "price":"100",
+    "places":"32",
+    "countries":"10"
+  },
+  {
+    "image":{images.Mountant},
+    "title":"Recently Viewed Trips",
+    "date":"October 28, 2022",
+    "price":"100",
+    "places":"32",
+    "countries":"10"
+  }];

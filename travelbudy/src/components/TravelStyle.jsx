@@ -1,4 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import Card from "../components/Card";
+import { images } from "../constants";
+// import trips from "../data/trips.json";
 
 const TravelStyle = () => {
   const card = {
@@ -13,13 +16,17 @@ const TravelStyle = () => {
     marginLeft: "200px",
   };
 
+  const form = {
+    display: "flex",
+    flexDirection: "row",
+    width: "auto",
+  };
+
   const posts = [
-    { title: "a", description: "This is b" },
-    { title: "aa", description: "This is bb" },
-    { title: "aaa", description: "This is bbb" },
-    { title: "aaaa", description: "This is bbbb" },
-    { title: "aaaaa", description: "This is bbbbb" },
-    { title: "aaaaaa", description: "This is bbbbbb" },
+    { url: `${images.MainBg}`, title: "Main-bg" },
+    { url: `${images.Boat}`, title: "Boat" },
+    { url: `${images.Mountant}`, title: "Mountant" },
+    { url: `${images.TravelGirl}`, title: "TravelGirl" },
   ];
 
   // Store sortby order i.e. ascending or descending
@@ -35,6 +42,15 @@ const TravelStyle = () => {
     query: "",
     list: posts,
   });
+
+  const media = {
+    // Adding media query..
+    "@media only screen and (max-width: 600px)": {
+      display: "flex",
+      flexDirection: "column",
+      background: "red",
+    },
+  };
 
   // Filter posts on typing in search input
   const handleChange = (e) => {
@@ -87,37 +103,54 @@ const TravelStyle = () => {
 
   return (
     <div>
-      <form>
-        <span style={margin}>Search</span>
-        <input onChange={handleChange} value={state.query} type="search" />
+      <form style={form}>
+        <div style={media}>
+          <span style={margin}>Search</span>
+          <input onChange={handleChange} value={state.query} type="search" />
+        </div>
 
-        <span style={margin}>Sort By</span>
-        <select defaultValue={"title"} onChange={(e) => sortBy(e.target.value)}>
-          <option value="title" disabled>
-            None
-          </option>
-          <option value="title">Title</option>
-          <option value="description">Description</option>
-        </select>
+        <div style={media}>
+          <span style={margin}>Sort By</span>
+          <select
+            defaultValue={"title"}
+            onChange={(e) => sortBy(e.target.value)}
+          >
+            <option value="title" disabled>
+              None
+            </option>
+            <option value="title">Title</option>
+            <option value="description">Description</option>
+          </select>
+        </div>
 
-        <span style={margin}>Sort By</span>
-        <select
-          defaultValue={"DEFAULT"}
-          onChange={(e) => updatePosts(e.target.value)}
-        >
-          <option value="DEFAULT" disabled>
-            None
-          </option>
-          <option value="ascending">Ascending</option>
-          <option value="descending">Descending</option>
-        </select>
+        <div style={media}>
+          <span style={margin}>Sort By</span>
+          <select
+            defaultValue={"DEFAULT"}
+            onChange={(e) => updatePosts(e.target.value)}
+          >
+            <option value="DEFAULT" disabled>
+              None
+            </option>
+            <option value="ascending">Ascending</option>
+            <option value="descending">Descending</option>
+          </select>
+        </div>
       </form>
       <ul>
-        {state.list.map((post) => {
+        {posts.map((post) => {
           return (
-            <div key={post.title} style={card}>
-              <h2>{post.title}</h2>
-              <p>{post.description}</p>
+            <div key={post.title}>
+              {/* <h2>{post.title}</h2>
+              <p>{post.description}</p> */}
+              <Card
+                image={images.Mountant}
+                title="Recently Viewed Trips"
+                date="October 28, 2022"
+                price="100"
+                places="32"
+                countries="10"
+              />
             </div>
           );
         })}
