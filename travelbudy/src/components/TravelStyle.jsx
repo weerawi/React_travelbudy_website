@@ -25,7 +25,7 @@ const TravelStyle = () => {
 
   const margin = {
     container: (isRowBased) => ({
-      marginLeft: isRowBased ? "200px" : "0",
+      marginLeft: isRowBased ? "200px" : "100px",
       color: "lightgrey",
       marginRight: "1rem",
     }),
@@ -37,6 +37,16 @@ const TravelStyle = () => {
     margin: "10px 0",
   };
 
+  const media = {
+    container: (isRowBased) => ({
+      // display: "flex",
+      display: "grid",
+      // flexDirection: isRowBased ? "" : "column",
+      gridTemplateColumns: "repeat(auto-fill, minmax(410px, 1fr))",
+      // flexDirection: isRowBased ? "row" : "column",
+      justifyContent: "space-around",
+    }),
+  };
   // Store sortby order i.e. ascending or descending
   const [sortType, setSortType] = useState("ascending");
 
@@ -51,19 +61,10 @@ const TravelStyle = () => {
     list: Trips,
   });
 
-  const isRowBased = useMediaQuery("(min-width: 1500px)");
+  const isRowBased = useMediaQuery("(min-width: 1300px)");
 
   const searchBar = {
     justifyContent: "space-around",
-  };
-
-  const media = {
-    container: (isRowBased) => ({
-      display: "flex",
-
-      flexDirection: isRowBased ? "row" : "column",
-      justifyContent: "space-around",
-    }),
   };
 
   // Filter posts on typing in search input
