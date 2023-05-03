@@ -1,34 +1,38 @@
-
-
-export const trips=[{
-    "image":{images.Mountant},
-    "title":"Recently Viewed Trips",
-    "date":"October 28, 2022",
-    "price":"100",
-    "places":"32",
-    "countries":"10"
+[
+  {
+    "id": 1,
+    "image": "images.Mountant",
+    "title": "Recently Viewed Trips",
+    "date": "October 28, 2022",
+    "price": "100",
+    "places": "32",
+    "countries": "10"
   },
   {
-    "image":{images.Mountant},
-    "title":"Recently Viewed Trips",
-    "date":"October 28, 2022",
-    "price":"100",
-    "places":"32",
-    "countries":"10"
+    "id": 2,
+    "image": "images.Mountant",
+    "title": "Recently Viewed ",
+    "date": "March 2, 2022",
+    "price": "5100",
+    "places": "02",
+    "countries": "10"
   },
   {
-    "image":{images.Mountant},
-    "title":"Recently Viewed Trips",
-    "date":"October 28, 2022",
-    "price":"100",
-    "places":"32",
-    "countries":"10"
+    "id": 3,
+    "image": "images.Mountant",
+    "title": "Recently ",
+    "date": "May 28, 2022",
+    "price": "1300",
+    "places": "132",
+    "countries": "10"
   },
   {
-    "image":{images.Mountant},
-    "title":"Recently Viewed Trips",
-    "date":"October 28, 2022",
-    "price":"100",
-    "places":"32",
-    "countries":"10"
-  }];
+    "id": 4,
+    "image": "images.Mountant",
+    "title": " Trips",
+    "date": "October 30, 2022",
+    "price": "1000",
+    "places": "332",
+    "countries": "10"
+  }
+]

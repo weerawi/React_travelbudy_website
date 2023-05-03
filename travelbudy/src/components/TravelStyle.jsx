@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Card from "../components/Card";
 import { images } from "../constants";
-// import trips from "../data/trips.json";
+import Trips from "../data/trips.json";
 
 const TravelStyle = () => {
   const card = {
@@ -22,12 +22,12 @@ const TravelStyle = () => {
     width: "auto",
   };
 
-  const posts = [
-    { url: `${images.MainBg}`, title: "Main-bg" },
-    { url: `${images.Boat}`, title: "Boat" },
-    { url: `${images.Mountant}`, title: "Mountant" },
-    { url: `${images.TravelGirl}`, title: "TravelGirl" },
-  ];
+  // const posts = [
+  //   { url: `${images.MainBg}`, title: "Main-bg" },
+  //   { url: `${images.Boat}`, title: "Boat" },
+  //   { url: `${images.Mountant}`, title: "Mountant" },
+  //   { url: `${images.TravelGirl}`, title: "TravelGirl" },
+  // ];
 
   // Store sortby order i.e. ascending or descending
   const [sortType, setSortType] = useState("ascending");
@@ -40,7 +40,7 @@ const TravelStyle = () => {
 
   const [state, setstate] = useState({
     query: "",
-    list: posts,
+    list: Trips,
   });
 
   const media = {
@@ -54,8 +54,8 @@ const TravelStyle = () => {
 
   // Filter posts on typing in search input
   const handleChange = (e) => {
-    const results = posts.filter((post) => {
-      if (e.target.value === "") return posts;
+    const results = Trips.filter((post) => {
+      if (e.target.value === "") return Trips;
       return post[sortByField]
         .toLowerCase()
         .includes(e.target.value.toLowerCase());
@@ -85,7 +85,7 @@ const TravelStyle = () => {
     setstate({
       query: state.query,
       list: !result
-        ? sortFunc(posts, e, sortByField)
+        ? sortFunc(Trips, e, sortByField)
         : sortFunc(result, e, sortByField),
     });
   }
@@ -96,7 +96,7 @@ const TravelStyle = () => {
     setstate({
       query: state.query,
       list: !result
-        ? sortFunc(posts, sortType, e)
+        ? sortFunc(Trips, sortType, e)
         : sortFunc(result, sortType, e),
     });
   }
@@ -138,18 +138,16 @@ const TravelStyle = () => {
         </div>
       </form>
       <ul>
-        {posts.map((post) => {
+        {Trips.map((trip) => {
           return (
-            <div key={post.title}>
-              {/* <h2>{post.title}</h2>
-              <p>{post.description}</p> */}
+            <div key={trip.id}>
               <Card
-                image={images.Mountant}
-                title="Recently Viewed Trips"
-                date="October 28, 2022"
-                price="100"
-                places="32"
-                countries="10"
+                image={trip.image}
+                title={trip.title}
+                date={trip.date}
+                price={trip.price}
+                places={trip.places}
+                countries={trip.countries}
               />
             </div>
           );
