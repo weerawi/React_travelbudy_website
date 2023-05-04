@@ -47,6 +47,8 @@ const TravelStyle = () => {
       justifyContent: "space-around",
     }),
   };
+
+  // const Trips = [{ title: "hi nan" }, { title: "hi " }, { title: "nan" }];
   // Store sortby order i.e. ascending or descending
   const [sortType, setSortType] = useState("ascending");
 
@@ -62,10 +64,6 @@ const TravelStyle = () => {
   });
 
   const isRowBased = useMediaQuery("(min-width: 1300px)");
-
-  const searchBar = {
-    justifyContent: "space-around",
-  };
 
   // Filter posts on typing in search input
   const handleChange = (e) => {
@@ -119,7 +117,7 @@ const TravelStyle = () => {
   return (
     <div>
       <form style={searchBg.container(isRowBased)}>
-        <div style={searchBar}>
+        <div>
           <span style={margin.container(isRowBased)}> Search </span>
           <input
             style={input}
@@ -129,14 +127,14 @@ const TravelStyle = () => {
           />
         </div>
 
-        <div style={searchBar}>
+        <div>
           <span style={margin.container(isRowBased)}>Sort By</span>
           <select
             style={input}
             defaultValue={"title"}
             onChange={(e) => sortBy(e.target.value)}
           >
-            <option value="title" disabled>
+            <option value="title" enabled>
               None
             </option>
             <option value="title">Title</option>
@@ -144,14 +142,14 @@ const TravelStyle = () => {
           </select>
         </div>
 
-        <div style={searchBar}>
+        <div>
           <span style={margin.container(isRowBased)}>Sort By</span>
           <select
             style={input}
             defaultValue={"DEFAULT"}
             onChange={(e) => updatePosts(e.target.value)}
           >
-            <option value="DEFAULT" disabled>
+            <option value="DEFAULT" enabaled>
               None
             </option>
             <option value="ascending">Ascending</option>
